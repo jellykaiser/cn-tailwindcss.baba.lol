@@ -43,11 +43,11 @@ export const documentationNav = {
     },
     {
       ...pages['responsive-design'],
-      shortTitle: '自适应设计',
+      shortTitle: '响应式设计',
     },
     {
       ...pages['hover-focus-and-other-states'],
-      shortTitle: 'hover & focus & 其他各种状态',
+      shortTitle: 'hover & focus & 其他各种变体',
     },
     {
       ...pages['dark-mode'],
