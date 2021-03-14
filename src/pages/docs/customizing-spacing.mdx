@@ -1,12 +1,12 @@
 ---
-title: Customizing Spacing
-shortTitle: Spacing
-description: Customizing the default spacing and sizing scale for your project.
+title: 自定义间距
+shortTitle: 间距
+description: 自定义间距和尺寸。
 ---
 
 import { SpacingScale } from '@/components/SpacingScale'
 
-Use the `spacing` key in the `theme` section of your `tailwind.config.js` file to customize Tailwind's [default spacing/sizing scale](#default-spacing-scale).
+通过 `theme`里的`spacing`字段定制Tailwind里的[默认尺寸和间距](#default-spacing-scale).
 
 ```js
 // tailwind.config.js
@@ -24,14 +24,14 @@ module.exports = {
 }
 ```
 
-By default the spacing scale is inherited by the `padding`, `margin`, `width`, `height`, `maxHeight`, `gap`, `inset`, `space`, and `translate` core plugins.
+默认情况下，间距会被`padding`, `margin`, `width`, `height`, `maxHeight`, `gap`, `inset`, `space`以及`translate`核心插件继承。
 
 ---
 
-## Extending the default spacing scale
+## 继承默认间距
 
 
-As described in the [theme documentation](/docs/theme#extending-the-default-theme), if you'd like to extend the default spacing scale, you can do so using the `theme.extend.spacing` section of your `tailwind.config.js` file:
+就像[主题](/docs/theme#extending-the-default-theme)里面描述的，如果你想继承默认主题的间距，你可以使用`theme.extend.spacing`字段：
 
 ```js
 // tailwind.config.js
@@ -49,13 +49,13 @@ module.exports = {
 }
 ```
 
-This will generate classes like `p-13`, `m-15`, and `h-128` in addition to all of Tailwind's default spacing/sizing utilities.
+这除了生成默认的间距，还会生成`p-13`, `m-15`以及`h-128`类。
 
 ---
 
-## Overriding the default spacing scale
+## 覆盖间距
 
-As described in the [theme documentation](/docs/theme#overriding-the-default-theme), if you'd like to override the default spacing scale, you can do so using the `theme.spacing` section of your `tailwind.config.js` file:
+就像[theme documentation](/docs/theme#overriding-the-default-theme)里面面熟的，如果你想覆盖默认间距，直接在`theme.spacing`字段上添加你的自定义间距：
 
 ```js
 // tailwind.config.js
@@ -71,12 +71,12 @@ module.exports = {
 }
 ```
 
-This will disable Tailwind's default spacing scale and generate classes like `p-sm`, `m-md`, `w-lg`, and `h-xl` instead.
+这只会生成`p-sm`, `m-md`, `w-lg`以及 `h-xl`，而不会生成默认间距。
 
 ---
 
-## Default spacing scale
+## 默认间距
 
-By default, Tailwind includes a generous and comprehensive numeric spacing scale. The values are proportional, so `16` is twice as much spacing as `8` for example. One spacing unit is equal to `0.25rem`, which translates to `4px` by default in common browsers.
+默认情况下，Tailwind提供了一个全面的间距列表。这些值都是成比例的，一个单位等于`0.25rem`，在普通浏览器中默认为`4px`，所以`16`就是`16 * 0.25rem = 4rem`。
 
 <SpacingScale />

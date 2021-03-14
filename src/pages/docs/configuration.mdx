@@ -1,13 +1,13 @@
 ---
-title: Configuration
-description: A guide to configuring and customizing your Tailwind installation.
+title: 配置
+description: 关于配置和自定义安装的指南。
 ---
 
 import { CorePluginReference } from '@/components/CorePluginReference'
 
-Because Tailwind is a framework for building bespoke user interfaces, it has been designed from the ground up with customization in mind.
+因为Tailwind是一个构建定制用户界面的框架，所以它从一开始就以定制为理念进行设计。
 
-By default, Tailwind will look for an optional `tailwind.config.js` file at the root of your project where you can define any customizations.
+默认情况下，Tailwind会读取根目录的`tailwind.config.js`，你可以在里面进行所有的定制。
 
 ```js
 // Example `tailwind.config.js` file
@@ -44,17 +44,17 @@ module.exports = {
 }
 ```
 
-Every section of the config file is optional, so you only have to specify what you'd like to change. Any missing sections will fall back to Tailwind's [default configuration](https://github.com/tailwindlabs/tailwindcss/blob/master/stubs/defaultConfig.stub.js).
+配置文件里面的所有字段都是可选的，你可以只定制你需要修改的部分，剩余的会使用[默认配置](https://github.com/tailwindlabs/tailwindcss/blob/master/stubs/defaultConfig.stub.js).
 
 ## Creating your configuration file
 
-Generate a Tailwind config file for your project using the Tailwind CLI utility included when you install the `tailwindcss` npm package:
+当你安装好了`tailwindcss`依赖包，就可以使用Tailwind CLI生成一个基础配置文件：
 
 ```shell
 npx tailwindcss init
 ```
 
-This will create a minimal `tailwind.config.js` file at the root of your project:
+这会生成一个简化版的`tailwind.config.js`文件到你的根目录:
 
 ```js
 // tailwind.config.js
@@ -71,15 +71,15 @@ module.exports = {
 }
 ```
 
-### Using a different file name
+### 使用其他文件名
 
-To use a name other than `tailwind.config.js`, pass it as an argument on the command-line:
+如果想用其他的配置文件名字，而不是默认的`tailwind.config.js`，在初始化的时候输入文件名:
 
 ```shell
 npx tailwindcss init tailwindcss-config.js
 ```
 
-If you use a custom file name, you will need to specify it when including Tailwind as a plugin in your PostCSS configuration as well:
+如果你改变了配置文件名字，你需要在PostCSS配置文件中显性标明：
 
 ```js
 // postcss.config.js
@@ -90,15 +90,15 @@ module.exports = {
 }
 ```
 
-### Generating a PostCSS configuration file
+### 生成一个PostCSS配置文件
 
-Use the `-p` flag if you'd like to also generate a basic `postcss.config.js` file alongside your `tailwind.config.js` file:
+使用`-p`选项可以再生成一个PostCSS配置文件，名字为`postcss.config.js`：
 
 ```shell
 npx tailwindcss init -p
 ```
 
-This will generate a `postcss.config.js` file in your project that looks like this:
+这会生成一个PostCSS配置文件`postcss.config.js`：
 
 ```js
 module.exports = {
@@ -109,21 +109,21 @@ module.exports = {
 }
 ```
 
-### Scaffolding the entire default configuration
+### 搭建整个默认配置
 
-For most users we encourage you to keep your config file as minimal as possible, and only specify the things you want to customize.
+对于大多数用户，我们鼓励你将配置文件保持尽可能少，并且只指定您想要自定义的内容。
 
-If you'd rather scaffold a complete configuration file that includes all of Tailwind's default configuration, use the `--full` option:
+如果你想构建一个包含所有Tailwind默认配置的完整配置文件，请使用`——full`选项:
 
 ```shell
 npx tailwindcss init --full
 ```
 
-You'll get a file that matches the [default configuration file](https://unpkg.com/browse/tailwindcss@latest/stubs/defaultConfig.stub.js) Tailwind uses internally.
+你将得到一个与Tailwind内部使用的[默认配置文件](https://unpkg.com/browse/tailwindcss@latest/stubs/defaultConfig.stub.js)相匹配的文件。
 
-## Theme
+## 主题
 
-The `theme` section is where you define your color palette, fonts, type scale, border sizes, breakpoints — anything related to the visual design of your site.
+`theme`配置项可以让你自定义你的调色板、字体、边框、断点等所有的跟你网站视觉效果相关的配置。
 
 ```js
 // tailwind.config.js
@@ -152,11 +152,11 @@ module.exports = {
 }
 ```
 
-Learn more about the default theme and how to customize it in the [theme configuration guide](/docs/theme).
+在[主题配置指南](/docs/theme)查看更多关于默认主题以及如何自定义主题。
 
-## Variants
+## 变体
 
-The `variants` section lets you control which [variants](/docs/hover-focus-and-other-states) are generated for each core utility plugin.
+`variants`配置项让你可以控制为任何一个工具类生成你想要的[变体](/docs/hover-focus-and-other-states)。
 
 ```js
 // tailwind.config.js
@@ -171,11 +171,11 @@ module.exports = {
 }
 ```
 
-Learn more in the [variants configuration guide](/docs/configuring-variants).
+更多详情，查看[变体配置指南](/docs/configuring-variants)。
 
-## Plugins
+## 插件
 
-The `plugins` section allows you to register plugins with Tailwind that can be used to generate extra utilities, components, base styles, or custom variants.
+`plugins`配置项可以让你注册Tailwind插件，插件可以用来生成额外的工具类、组件类或者基础类，以及自定义的变体。
 
 ```js
 // tailwind.config.js
@@ -189,11 +189,11 @@ module.exports = {
 }
 ```
 
-Learn more about writing your own plugins in the [plugin authoring guide](/docs/plugins).
+了解如何编写插件，请查看[插件编写指南](/docs/plugins)。
 
-## Presets
+## 预设
 
-The `presets` section allows you to specify your own custom base configuration instead of using Tailwind's default base configuration.
+`presets`配置项可以让你使用自定义的基础配置项，而不是Tailwind的默认基础配置。
 
 ```js
 // tailwind.config.js
@@ -210,13 +210,13 @@ module.exports = {
 }
 ```
 
-Learn more about presets in the [presets documentation](/docs/presets).
+更多详情，查看[预设](/docs/presets).
 
-## Prefix
+## 前缀
 
-The `prefix` option allows you to add a custom prefix to all of Tailwind's generated utility classes. This can be really useful when layering Tailwind on top of existing CSS where there might be naming conflicts.
+`prefix`可以让你自定义一个前缀到Tailwind生成的工具类前面。当你在Tailwind后面使用其他的css文件是，自定义前缀能很好的避免样式冲突。
 
-For example, you could add a `tw-` prefix by setting the `prefix` option like so:
+例如，你可以添加一个`tw-`前缀：
 
 ```js
 // tailwind.config.js
@@ -225,7 +225,7 @@ module.exports = {
 }
 ```
 
-Now every class will be generated with the configured prefix:
+现在所有的生成的工具类都会加上一个前缀：
 
 ```css
 .tw-text-left {
@@ -240,7 +240,7 @@ Now every class will be generated with the configured prefix:
 /* etc. */
 ```
 
-It's important to understand that this prefix is added _after_ any variant prefixes. That means that classes with responsive or state prefixes like `sm:` or `hover:` will still have the responsive or state prefix *first*, with your custom prefix appearing after the colon:
+需要注意的是，这个前缀是在变体之后的。 
 
 ```html
 <div class="tw-text-lg md:tw-text-xl tw-bg-red-500 **hover:tw-bg-blue-500**">
@@ -248,9 +248,9 @@ It's important to understand that this prefix is added _after_ any variant prefi
 </div>
 ```
 
-Prefixes are only added to classes generated by Tailwind; **no prefix will be added to your own custom classes.**
+前缀只会添加到Tailwind生成的类前面；**而不会添加到你自定义的类**
 
-That means if you add your own responsive utility like this:
+这意味着你可以像下面这样使用：
 
 ```css
 @variants hover {
@@ -258,14 +258,14 @@ That means if you add your own responsive utility like this:
 }
 ```
 
-...the generated responsive classes will not have your configured prefix:
+生成的自适应的类，不会带有前缀：
 
 ```css
 .bg-brand-gradient { /* ... */ }
 .hover\:bg-brand-gradient:hover { /* ... */ }
 ```
 
-If you'd like to prefix your own utilities as well, just add the prefix to the class definition:
+如果你想自定义的类也有前缀，直接手动加上去把：
 
 ```css
 @variants hover {
@@ -275,9 +275,9 @@ If you'd like to prefix your own utilities as well, just add the prefix to the c
 
 ## Important
 
-The `important` option lets you control whether or not Tailwind's utilities should be marked with `!important`. This can be really useful when using Tailwind with existing CSS that has high specificity selectors.
+`important`可以让你控制哪些类可以带有`!important`，当你把Tailwind跟其他CSS类一起使用的时候，这可以让Tailwind保持更高的权限：
 
-To generate utilities as `!important`, set the `important` key in your configuration options to `true`:
+想要生成`!important`，设置 `important`选项为`true`：
 
 ```js
 // tailwind.config.js
@@ -286,7 +286,7 @@ module.exports = {
 }
 ```
 
-Now all of Tailwind's utility classes will be generated as `!important`:
+想在所有的Tailwind的工具类都会加上`!important`：
 
 ```css
 .leading-none {
@@ -301,9 +301,9 @@ Now all of Tailwind's utility classes will be generated as `!important`:
 /* etc. */
 ```
 
-Note that any of your own custom utilities **will not** automatically be marked as `!important` by enabling this option.
+需要注意的是，你自定义的类是不会加上`!important`的。
 
-If you'd like to make your own utilities `!important`, just add `!important` to the end of each declaration yourself:
+如果你希望加上`!important`，手动加上即可：
 
 ```css
 @responsive {
@@ -313,11 +313,11 @@ If you'd like to make your own utilities `!important`, just add `!important` to 
 }
 ```
 
-### Selector strategy
+### 选择器策略
 
-Setting `important` to `true` can introduce some issues when incorporating third-party JS libraries that add inline styles to your elements. In those cases, Tailwind's `!important` utilities defeat the inline styles, which can break your intended design.
+将`important`设置为`true`，当使用第三发JS库向你的标签添加内联样式的时候，可能会引发一些问题。因为Tailwind的`!important`工具类权限比内联样式更高，这可能会出现预期之外的结果。
 
-To get around this, you can set `important` to an ID selector like `#app` instead:
+要解决这个问题，你可以设置`important`为一个ID选择器，如`#app`：
 
 ```js
 // tailwind.config.js
@@ -326,11 +326,11 @@ module.exports = {
 }
 ```
 
-This configuration will prefix all of your utilities with the given selector, effectively increasing their specificity without actually making them `!important`.
+这样配置，可以让所有Tailwind生成的工具类都基于这个前缀选择器，这样有效的增加了权重，而不需要添加`!important`。
 
-After you specify the `important` selector, you'll need to ensure that the root element of your site matches it.  Using the example above, we would need to set our root element's `id` attribute to `app` in order for styles to work properly.
+当你将`important`设置为一个选择器，你要确保它是你的站点的根节点，为了让上面的例子可以工作，我们需要将根节点的`id`设置为`app`。
 
-After your configuration is all set up and your root element matches the selector in your Tailwind config, all of Tailwind's utilities will have a high enough specificity to defeat other classes used in your project, **without** interfering with inline styles:
+当你配置好之后，你的Tailwind工具类有足够的权限来覆盖其他的类，但是又不会干扰内联样式：
 
 ```html
 <html>
@@ -355,11 +355,11 @@ After your configuration is all set up and your root element matches the selecto
 ```
 
 
-## Separator
+## 分隔符
 
-The `separator` option lets you customize what character or string should be used to separate variant prefixes (screen sizes, `hover`, `focus`, etc.) from utility names (`text-center`, `items-end`, etc.).
+`separator`配置项可以让你自定义一个字符或者字符串来分隔不同的前缀(screen, `hover`, `focus`等)和工具类(`text-center`, `items-end`等)。
 
-We use a colon by default (`:`), but it can be useful to change this if you're using a templating language like [Pug](https://pugjs.org) that doesn't support special characters in class names.
+我们默认使用冒号(`:`)，但是当你使用模板引擎的时候如[Pug](https://pugjs.org)，它不支持类名中的特殊字符，修改分隔符将很有必要。
 
 ```js
 // tailwind.config.js
@@ -368,11 +368,11 @@ module.exports = {
 }
 ```
 
-## Variant Order
+## 变体权重
 
-If you are using the `extend` feature to enable extra variants, those variants are automatically sorted to respect a sensible default variant order.
+如果你使用`extend`特性去启动额外的变体，那么这些变体的顺序就是默认的。
 
-You can customize this if necessary under the `variantOrder` key:
+你可以通过`variantOrder`字段来改变它们的顺序:
 
 ```js
 // tailwind.config.js
@@ -397,11 +397,11 @@ module.exports = {
 }
 ```
 
-## Core Plugins
+## 核心插件
 
-The `corePlugins` section lets you completely disable classes that Tailwind would normally generate by default if you don't need them for your project.
+`corePlugins`可以让你完全禁用一些你不需要的类。
 
-If you don't provide any `corePlugins` configuration, all core plugins will be enabled by default:
+如果你不设置`corePlugins`，将默认生成所有的工具类：
 
 ```js
 // tailwind.config.js
@@ -410,7 +410,7 @@ module.exports = {
 }
 ```
 
-If you'd like to disable specific core plugins, provide an object for `corePlugins` that sets those plugins to `false`:
+如果你想禁用某些插件，设置`corePlugins`里的对应插件字段为`false`:
 
 ```js
 // tailwind.config.js
@@ -423,7 +423,7 @@ module.exports = {
 }
 ```
 
-If you'd like to safelist which core plugins should be enabled, provide an array that includes a list of the core plugins you'd like to use:
+如果你先安全的使用某些插件，可以配置一个数组，填入你想开启的插件：
 
 ```js
 // tailwind.config.js
@@ -437,7 +437,7 @@ module.exports = {
 }
 ```
 
-If you'd like to disable all of Tailwind's core plugins and simply use Tailwind as a tool for processing your own custom plugins, provide an empty array:
+如果你想禁用所有插件，并只把Tailwind当成一个组织自定义类的工具，你可以传入一个空数组：
 
 ```js
 // tailwind.config.js
@@ -447,15 +447,15 @@ module.exports = {
 ```
 
 
-Here's a list of every core plugin for reference:
+核心插件参考：
 
 <CorePluginReference />
 
-## Referencing in JavaScript
+## 在JS中引用
 
-It can often be useful to reference your configuration values in your own client-side JavaScript — for example to access some of your theme values when dynamically applying inline styles in a React or Vue component.
+在客户端的JavaScript中引入配置项通常是很有用的。如，在React或者Vue组件中动态设置内联样式时候需要获取一些配置值。
 
-To make this easy, Tailwind provides a `resolveConfig` helper you can use to generate a fully merged version of your configuration object:
+为了简化这个过程，Tailwind提供了一个`resolveConfig`方法，你可以用它来生成一个完全合并的配置对象内容：
 
 ```js
 import resolveConfig from 'tailwindcss/resolveConfig'
@@ -473,4 +473,4 @@ fullConfig.theme.boxShadow['2xl']
 // => '0 25px 50px -12px rgba(0, 0, 0, 0.25)'
 ```
 
-Note that this will transitively pull in a lot of our build-time dependencies, resulting in bigger bundle client-side size. To avoid this, we recommend using a tool like [babel-plugin-preval](https://github.com/kentcdodds/babel-plugin-preval) to generate a static version of your configuration at build-time.
+请注意，这将会引入大量的构建时依赖项，导致客户端包的大小变大， 为了避免这种情况，我们建议使用像[babel-plugin-preval](https://github.com/kentcdodds/babel-plugin-preval)这样的工具，在构建时生成配置的静态版本。

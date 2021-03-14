@@ -1,6 +1,6 @@
 ---
-title: Plugins
-description: Extending Tailwind with reusable third-party plugins.
+title: 插件
+description: 编写第三方插件扩展Tailwind
 ---
 
 import { Heading } from '@/components/Heading'
@@ -8,9 +8,9 @@ import { TipGood, TipBad } from '@/components/Tip'
 
 ## <Heading hidden>Overview</Heading>
 
-Plugins let you register new styles for Tailwind to inject into the user's stylesheet using JavaScript instead of CSS.
+插件可以让你注册新的样式，让Tailwind用JavaScript代替CSS注入用户的样式表。
 
-To get started with your first plugin, import Tailwind's `plugin` function from `tailwindcss/plugin`. Then inside your `plugins` array, and call it with an anonymous function as the first argument.
+要开始使用你的第一个插件，从`tailwindcss/plugin`中导入Tailwind的`plugin`方法。然后在你的`plugins`数组中，用一个匿名函数作为第一个参数调用它。
 
 ```js
 // tailwind.config.js
@@ -25,18 +25,18 @@ module.exports = {
 }
 ```
 
-Plugin functions receive a single object argument that can be [destructured](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) into several helper functions:
+Plugin里的匿名函数接受一个对象，可以[解构](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)成多个方法:
 
-- `addUtilities()`, for registering new utility styles
-- `addComponents()`, for registering new component styles
-- `addBase()`, for registering new base styles
-- `addVariant()`, for registering custom variants
-- `e()`, for escaping strings meant to be used in class names
-- `prefix()`, for manually applying the user's configured prefix to parts of a selector
-- `theme()`, for looking up values in the user's theme configuration
-- `variants()`, for looking up values in the user's variants configuration
-- `config()`, for looking up values in the user's Tailwind configuration
-- `postcss`, for doing low-level manipulation with [PostCSS](https://api.postcss.org/postcss.html) directly
+- `addUtilities()`, 注册新的@utility样式
+- `addComponents()`, 注册新的@component样式
+- `addBase()`, 注册新的@base样式
+- `addVariant()`, 注册自定义变体
+- `e()`,转移类名字符串，以便更安全的时候
+- `prefix()`, 手动地将用户配置的前缀应用到选择器的各个部分
+- `theme()`, 获取用户在`theme`中的配置
+- `variants()`,获取用户在`variants`中的配置
+- `config()`, 获取用户在Tailwind的配置
+- `postcss`, 直接使用[PostCSS](https://api.postcss.org/postcss.html)进行更底层的操作
 
 ---
 
